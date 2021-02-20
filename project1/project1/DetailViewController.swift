@@ -10,11 +10,22 @@ import UIKit
 class DetailViewController: UIViewController {
     @IBOutlet var ImageView: UIImageView!
     var selectedImage: String?
+    var position: (currentNumber: Int, totalNumber: Int)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = selectedImage
+        // Title used in the tutorial:
+        // title = selectedImage
+        
+        // Title changed for Day 18 challenge 3: Show "Picture x of y"
+        // To do that, position needs to be unwrapped
+        guard let position = position else {
+            print("No position provided")
+            return
+        }
+        
+        title = "Picture \(position.currentNumber) of \(position.totalNumber)"
         navigationItem.largeTitleDisplayMode = .never
 
         if let imageToLoad = selectedImage {
@@ -31,16 +42,4 @@ class DetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
