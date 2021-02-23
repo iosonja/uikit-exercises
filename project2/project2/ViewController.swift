@@ -81,7 +81,13 @@ class ViewController: UIViewController {
         
         // Add a dismiss button to the alert so that the player can continue:
         ac.addAction(UIAlertAction(title:"Continue", style: .default, handler: askQuestion))
-        // askQuestion is a closure, not method, and this is on purpose.
+        // The handler parameter takes a closer type argument, which will be executed after the
+        // button has been tapped.
+        
+        /// Further explanation to the handler parameter in addAction(): if the given argument is a
+        /// closure, it means "here's the code to run". If the argument is given in a method format
+        /// "askQuestion()", it would mean "run this method and it'll return you the closure to be
+        /// executed".
         
         // The alert will be presented after each button tap, only the text changes according to
         // whether or not the answer was correct:
