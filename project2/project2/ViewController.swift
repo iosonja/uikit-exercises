@@ -53,9 +53,9 @@ class ViewController: UIViewController {
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
-        // Show a country name as the title. This is the country we randomly got as the correct
-        // answer to this round. Uppercase the entire name because there are countries with
-        // names including only initials, such as UK and US on the list.
+        // Show a country name as a navigation bar title. This is the country we randomly got as
+        // the correct answer to this round. Uppercase the entire name because there are countries
+        // with names including only initials, such as UK and US on the list.
         title = countries[correctAnswer].uppercased()
     }
 
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
         ac.addAction(UIAlertAction(title:"Continue", style: .default, handler: askQuestion))
         // askQuestion is a closure, not method, and this is on purpose.
         
-        // The alert will be presented after each tap, only the text changes according to
+        // The alert will be presented after each button tap, only the text changes according to
         // whether or not the answer was correct:
         present(ac, animated: true)
     }
