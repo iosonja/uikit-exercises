@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     var score = 0
     // Create a placeholder for what will be the int representing the correct flag on each round:
     var correctAnswer = 0
+    // (Day 21, part 2:) keep track of the number of questions so far:
+    var questionsAsked = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,11 @@ class ViewController: UIViewController {
     }
     
     func askQuestion(action: UIAlertAction! = nil) {
+        // (Day 21, part 2:) Clear scores if the question starts a new round:
+        if questionsAsked == 10 {
+            score = 0
+            questionsAsked = 0
+        }
         // First randomly pick 3 of the countries to be options, then pick one of them to be the
         // correct answer:
         countries.shuffle()
@@ -56,7 +63,7 @@ class ViewController: UIViewController {
         // Show a country name as a navigation bar title. This is the country we randomly got as
         // the correct answer to this round. Uppercase the entire name because there are countries
         // with names including only initials, such as UK and US on the list.
-        title = countries[correctAnswer].uppercased()
+        title = "\(countries[correctAnswer].uppercased())\t\tScore: \(score)" // Modified for day 21
     }
 
     // The following method defines what will be done when any of the three buttons is tapped.
@@ -73,14 +80,24 @@ class ViewController: UIViewController {
             title = "Wrong"
             score -= 1
         }
+        questionsAsked += 1
         
-        // Create an alert that will have nothing but text after this:
+        // Check if this was the final round and show a special alert if that's the case:
+        if questionsAsked == 10 {
+            let finalAlert = UIAlertController(title: title,
+                                               message: "Game ended. Your final score is \(score).",
+                                               preferredStyle: .alert)
+            finalAlert.addAction(UIAlertAction(title: "Play again", style: .default, handler: askQuestion))
+            present(finalAlert, animated: true)
+        }
+        
+        // Create an alert for all the other rounds:
         let ac = UIAlertController(title: title,
                                    message: "Your score is \(score)",
                                    preferredStyle: .alert)
         
         // Add a dismiss button to the alert so that the player can continue:
-        ac.addAction(UIAlertAction(title:"Continue", style: .default, handler: askQuestion))
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
         // The handler parameter takes a closer type argument, which will be executed after the
         // button has been tapped.
         
@@ -92,6 +109,7 @@ class ViewController: UIViewController {
         // The alert will be presented after each button tap, only the text changes according to
         // whether or not the answer was correct:
         present(ac, animated: true)
+
     }
     
 }
