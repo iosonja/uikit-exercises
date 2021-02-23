@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UITableViewController {
+    // Create an empty array that will later contain all image filenames:
     var pictures = [String]()
 
     override func viewDidLoad() {
@@ -18,27 +19,33 @@ class ViewController: UITableViewController {
         
         let fm = FileManager.default
         let path = Bundle.main.resourcePath! // This is where all the assets are
+        // Read every filename in the assets directory:
         let items = try! fm.contentsOfDirectory(atPath: path)
         
         for item in items {
+            // Add all relevant asset files to the 'pictures' array:
             if item.hasPrefix("nssl") {
                 pictures.append(item)
             }
         }
         pictures.sort() // Day 18 challenge 2: sort by filename
-        print(pictures)
+        print(pictures) // This print only shows in the terminal
     }
     
+    // Create table cells:
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pictures.count
     }
     
+    // Dequeue cells when scrolled:
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
+        // Label the cell according to corresponding image filename:
         cell.textLabel?.text = pictures[indexPath.row]
         return cell
     }
     
+    // When a cell is pressed, open a corresponding detail view
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController {
             vc.selectedImage = pictures[indexPath.row]

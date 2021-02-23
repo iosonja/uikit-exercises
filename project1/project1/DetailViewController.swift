@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
             return
         }
         
+        // Set navigation bar title:
         title = "Picture \(position.currentNumber) of \(position.totalNumber)"
         navigationItem.largeTitleDisplayMode = .never
 
@@ -33,11 +34,13 @@ class DetailViewController: UIViewController {
         }
     }
     
+    // Allow user to hide navigation bar with a tap:
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnTap = true
     }
     
+    // Allow user to unhide navigation bar:
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
