@@ -16,6 +16,10 @@ class ViewController: UITableViewController {
         
         title = "Storm Viewer"
         navigationController?.navigationBar.prefersLargeTitles = true
+        // Create a share button:
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action,
+                                                            target: self,
+                                                            action: #selector(shareTapped))
         
         let fm = FileManager.default
         let path = Bundle.main.resourcePath! // This is where all the assets are
@@ -52,6 +56,14 @@ class ViewController: UITableViewController {
             vc.position = (currentNumber: indexPath.row + 1, totalNumber: pictures.count)
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    // Share app:
+    @objc func shareTapped() {
+        let vc = UIActivityViewController(activityItems: [self], applicationActivities: [])
+        // Without the following code this would crash on iPad (running iOS, dunno if needed in 2021):
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
 }
 
