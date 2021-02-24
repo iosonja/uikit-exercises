@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    @IBOutlet var ImageView: UIImageView!
+    @IBOutlet var imageView: UIImageView!
     var selectedImage: String?
     var position: (currentNumber: Int, totalNumber: Int)?
     
@@ -28,10 +28,17 @@ class DetailViewController: UIViewController {
         // Set navigation bar title:
         title = "Picture \(position.currentNumber) of \(position.totalNumber)"
         navigationItem.largeTitleDisplayMode = .never
-
+        
+        // Create a share button:
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action,
+                                                            target: self,
+                                                            action: #selector(shareTapped))
+        // UIBarButtonItem is written in obj-c, so we need to make the shareTapped() method visible
+        // to obj-c so that it can be run in the arguments.
+        // The hash in the #selectore argument tells the Swift compiler there will be a method for this
 
         if let imageToLoad = selectedImage {
-            ImageView.image = UIImage(named: imageToLoad)
+            imageView.image = UIImage(named: imageToLoad)
         }
     }
     
@@ -46,4 +53,17 @@ class DetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
     }
+    
+    // Define what to share when the share button is tapped:
+    @objc func shareTapped() {
+        guard let image = imageView.image?.jpegData(compressionQuality: 0.8) else {
+            print("No image found")
+            return
+        }
+        let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        // Without the following code this would crash on iPad (running iOS):
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }
+    // The file info.plist still needs to be modified to ask for user's permission to write data
 }
