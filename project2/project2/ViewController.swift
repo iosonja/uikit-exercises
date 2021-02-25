@@ -4,6 +4,7 @@
 //
 //  Created by Sonja Ek on 21.2.2021.
 //
+// TODO: Day 22, challenge 3 - make scores appear when a button is pressed
 
 import UIKit
 
@@ -21,6 +22,11 @@ class ViewController: UIViewController {
     var correctAnswer = 0
     // (Day 21, part 2:) keep track of the number of questions so far:
     var questionsAsked = 0
+    
+    // (Day 22, challenge 3:) Show scores when a button is pressed:
+//    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action,
+//                                                        target: self,
+//                                                        action: #selector(showTapped))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +117,11 @@ class ViewController: UIViewController {
         present(ac, animated: true)
 
     }
+    
+    //@objc func showTapped() {
+
+        // Do stuff to show current scores
+        // present(vc, animated: true)
     
 }
 
