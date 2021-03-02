@@ -42,6 +42,11 @@ class ViewController: UIViewController, WKNavigationDelegate {
         toolbarItems = [progressButton, spacer, refresh]
         navigationController?.isToolbarHidden = false
         
+        webView.addObserver(self,
+                            forKeyPath: #keyPath(WKWebView.estimatedProgress),
+                            options: .new,
+                            context: nil)
+        
         let url = URL(string: "https://www.apple.com")! // Force unwrapping is ok bc this is hand-typed
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
@@ -66,6 +71,14 @@ class ViewController: UIViewController, WKNavigationDelegate {
         title = webView.title
     }
 
+    override func observeValue(forKeyPath keyPath: String?,
+                                     of object: Any?,
+                                     change: [NSKeyValueChangeKey : Any]?,
+                                     context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+            progressView.progress = Float(webView.estimatedProgress)
+        }
+    }
 
 }
 
