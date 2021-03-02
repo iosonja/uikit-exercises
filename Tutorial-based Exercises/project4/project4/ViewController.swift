@@ -10,6 +10,7 @@ import WebKit
 
 class ViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
+    var progressView: UIProgressView!
     
     override func loadView() {
         webView = WKWebView()
@@ -25,6 +26,21 @@ class ViewController: UIViewController, WKNavigationDelegate {
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(openTapped))
+        
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                     target: nil,
+                                     action: #selector(openTapped))
+        
+        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh,
+                                      target: webView,
+                                      action: #selector(webView.reload))
+        
+        progressView = UIProgressView(progressViewStyle: .default)
+        progressView.sizeToFit()
+        let progressButton = UIBarButtonItem(customView: progressView)
+        
+        toolbarItems = [progressButton, spacer, refresh]
+        navigationController?.isToolbarHidden = false
         
         let url = URL(string: "https://www.apple.com")! // Force unwrapping is ok bc this is hand-typed
         webView.load(URLRequest(url: url))
