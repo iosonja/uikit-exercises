@@ -15,9 +15,15 @@ class ViewController: UIViewController, WKNavigationDelegate {
     
     override func loadView() {
         webView = WKWebView()
-        // Delegate is something acting in place of another; asking questions etc on its behalf:
+        /// Delegate is something acting in place of another; asking questions and responding to
+        /// events on its behalf.
         webView.navigationDelegate = self
-        view = webView
+        // The navigationDelegate is saying "when any webpage navigation happens, tell me the
+        // current viewController"
+        
+        // Remember to make ViewController conform to WKNavigationDelegate.
+        
+        view = webView // view is not just any variable, that's why the extra step
     }
 
     override func viewDidLoad() {
@@ -48,8 +54,14 @@ class ViewController: UIViewController, WKNavigationDelegate {
                             options: .new,
                             context: nil)
         
-        let url = URL(string: "https://" + websites[0])! // Force unwrapping is ok bc this is hand-typed
+        /// Swift stores URLs as a specific URL data type.
+        /// The transfer protocol must be HTTPS instead of HTTP because app transport security blocks non-secure websites.
+        let url = URL(string: "https://" + websites[0])!
+        
+        // This wraps the URL in a URL request:
         webView.load(URLRequest(url: url))
+        
+        // Allow going to previous and next page using swiping gestures:
         webView.allowsBackForwardNavigationGestures = true
     }
     
