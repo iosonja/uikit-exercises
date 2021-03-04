@@ -11,7 +11,7 @@ import WebKit
 class ViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     var progressView: UIProgressView!
-    var websites = ["apple.com", "sonjaek.com"]
+    var websites = ["apple.com", "sonjaek.com", "wikipedia.org"]
     
     override func loadView() {
         webView = WKWebView()
@@ -108,8 +108,20 @@ class ViewController: UIViewController, WKNavigationDelegate {
                 }
             }
         }
+        let urlString = url?.absoluteString ?? "Unknown"
         
-        decisionHandler(.cancel) // Don't allow loading
+        // filter out "about:blank" to avoid unnecessary alerts
+        if urlString != "about:blank" {
+            let ac = UIAlertController(title: "Access blocked",
+                                       message: "The site is not on the list of allowed websites",
+                                       preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Back to safety", style: .default, handler: nil))
+            ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem // for iPad
+            present(ac, animated: true)
+        }
+
+        
+        decisionHandler(.cancel)
     }
 
 }
