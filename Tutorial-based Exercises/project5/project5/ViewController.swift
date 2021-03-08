@@ -23,8 +23,23 @@ class ViewController: UITableViewController {
         if allWords.isEmpty { // More efficient than counting length
             allWords = ["silkworm"]
         }
+        
+        startGame()
     }
-
+    
+    func startGame() {
+        // Pick a random word for a new challenge:
+        title = allWords.randomElement()
+        // Remove all values from the usedWords array:
+        usedWords.removeAll(keepingCapacity: true)
+        tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Word", for: indexPath)
+        cell.textLabel?.text = usedWords[indexPath.row]
+        return cell
+    }
 
 }
 
