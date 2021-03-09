@@ -17,6 +17,9 @@ class ViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
                                                             action: #selector(promptForAnswer))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh,
+                                                           target: self,
+                                                           action: #selector(startGame))
         
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
@@ -31,7 +34,7 @@ class ViewController: UITableViewController {
         startGame()
     }
     
-    func startGame() {
+    @objc func startGame() {
         // Pick a random word for a new challenge:
         title = allWords.randomElement()
         // Remove all values from the usedWords array:
@@ -145,8 +148,9 @@ class ViewController: UITableViewController {
     }
     
     func showErrorMessage(title errorTitle: String, msg errorMessage: String) {
-        
-        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
+        let ac = UIAlertController(title: errorTitle,
+                                   message: errorMessage,
+                                   preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
     }
