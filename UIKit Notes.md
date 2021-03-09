@@ -75,6 +75,6 @@
 - A Swift URL can be used for local files, in addition to web addresses.
 - NSRange stores the location and length of something and it’s commonly used with Objective-C APIs (including UIKit).
 - Inserting a single row into a table view is more efficient than calling reloadData(), and also animatable.
-- The .automatic() parameter chooses whichever animation makes sense for the change being made.
+- The .automatic value for the "with" parameter (eg. in insertRows() method) chooses whichever animation makes sense for the change being made.
 - If firstIndex(of:) doesn’t find the element being asked, it returns nil.
 
