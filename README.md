@@ -66,3 +66,11 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
    - `UIProgressView`
    - KVO
 
+Project 5: Word Scramble
+
+- A word game that deals with anagrams.
+- Topics covered:
+   - `NSRange`
+   - IndexPath
+   - and more
+
