@@ -14,7 +14,7 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
 - Topics covered:
    - table views and image views
    - app bundles
-   - F`ileManager`
+   - `FIleManager`
    - typecasting
    - view controllers
    - storyboards
@@ -53,4 +53,16 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
    - [ ] Create a new Cocoa Touch Class responsible for the detail view controller, and give it properties for its image view and the image to load.
    - [ ] You’ll also need to adjust your storyboard to include the detail view controller, including using Auto Layout to pin its image view correctly.
    - [ ] You will need to use `UIActivityViewController` to share your flag.
+
+#### Project 4: Simple web browser (tutorial-based)
+
+- A web browser built using WebKit. Allows visiting only certain web sites.
+- Topics covered:
+   - `loadView()`
+   - `WKWebView`
+   - delegation
+   - `URL`  & `URLRequest`
+   - `UIToolbar`
+   - `UIProgressView`
+   - KVO
 
