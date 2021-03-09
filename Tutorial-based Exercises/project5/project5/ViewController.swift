@@ -71,17 +71,22 @@ class ViewController: UITableViewController {
         
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
-                if isReal(word: lowerAnswer) {
-                    usedWords.insert(answer, at: 0)
-                    
-                    let indexPath = IndexPath(row: 0, section: 0)
-                    tableView.insertRows(at: [indexPath], with: .automatic)
-                    // The .automatic argument: "do whatever is the standard system animation here"
-                    
-                    return
+                if isNew(word: lowerAnswer) {
+                    if isReal(word: lowerAnswer) {
+                        usedWords.insert(answer, at: 0)
+                        
+                        let indexPath = IndexPath(row: 0, section: 0)
+                        tableView.insertRows(at: [indexPath], with: .automatic)
+                        // The .automatic argument: "do whatever is the standard system animation here"
+                        
+                        return
+                    } else {
+                        errorTitle = "Word not recognized"
+                        errorMessage = "You can't just make them up, you know!"
+                    }
                 } else {
-                    errorTitle = "Word not recognized"
-                    errorMessage = "You can't just make them up, you know!"
+                    errorTitle = "Same as the original word"
+                    errorMessage = "You have to come up with new words!"
                 }
             } else {
                 errorTitle = "Word already used"
@@ -116,6 +121,9 @@ class ViewController: UITableViewController {
     }
     
     func isReal(word: String) -> Bool {
+        if word.count < 3 {
+            return false
+        }
         let checker = UITextChecker()
         let range = NSRange(location: 0, length: word.utf16.count)
 //        "When you’re working with UIKit, SpriteKit, or any other Apple framework, use utf16.count
@@ -129,6 +137,14 @@ class ViewController: UITableViewController {
                                                             language: "en")
         return misspelledRange.location == NSNotFound
         // = "not found", basically nil
+    }
+    
+    func isNew(word: String) -> Bool {
+        if word == title {
+            return false
+        }
+        
+        return true
     }
 
 }
