@@ -14,11 +14,24 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
 - Topics covered:
    - table views and image views
    - app bundles
-   - FileManager
+   - `FileManager`
    - typecasting
    - view controllers
    - storyboards
    - outlets
    - Auto Layout
-   - UIImage
+   - `UIImage`
+
+ #### Project 2: Guess the Flag (tutorial-based)
+
+   - A game that shows some random flags to users and asks them to choose which one belongs to a particular country.
+   - Topics covered:
+      - @2x and @3x images
+      - asset catalogs
+      - `UIButton`
+      - `CALayer`
+      - `UIColor`
+      - random numbers
+      - actions
+      - `UIAlertController`
 
