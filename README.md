@@ -22,7 +22,7 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
    - Auto Layout
    - `UIImage`
 
- #### Project 2: Guess the Flag (tutorial-based)
+   #### Project 2: Guess the Flag (tutorial-based)
 
    - A game that shows some random flags to users and asks them to choose which one belongs to a particular country.
    - Topics covered:
@@ -34,4 +34,23 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
       - random numbers
       - actions
       - `UIAlertController`
+
+      #### Project 3:
+
+      - A version of Storm Viewer that allows images to be shared.
+      - Topics covered:
+         - `UIBarButtonItem`
+         - `UIActivityViewController`
+         - \#selector
+         - Asking for permissions & Info.plist
+
+      #### Challenge 1: Flag Listing (built from scratch, unfinished)
+
+      - An app that lists various world flags in a table view and opens the fags in a detail view.
+      - Tasks:
+         - [x] Start with a Single View App template, then change its main `ViewController`class so that builds on `UITableViewController` instead.
+         - [x] Load the list of available flags from the app bundle. You can type them directly into the code if you want, but it’s preferable not to.
+         - [ ] Create a new Cocoa Touch Class responsible for the detail view controller, and give it properties for its image view and the image to load.
+         - [ ] You’ll also need to adjust your storyboard to include the detail view controller, including using Auto Layout to pin its image view correctly.
+         - [ ] You will need to use `UIActivityViewController` to share your flag.
 
