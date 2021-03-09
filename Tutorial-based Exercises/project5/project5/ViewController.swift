@@ -70,13 +70,10 @@ class ViewController: UITableViewController {
     func submit(_ answer: String) {
         let lowerAnswer = answer.lowercased()
         
-        let errorTitle: String
-        let errorMessage: String
-        
         if isPossible(word: lowerAnswer) {
             if isOriginal(word: lowerAnswer) {
-                if isNew(word: lowerAnswer) {
-                    if isReal(word: lowerAnswer) {
+                if isReal(word: lowerAnswer) {
+                    if isNew(word: lowerAnswer) {
                         usedWords.insert(answer, at: 0)
                         
                         let indexPath = IndexPath(row: 0, section: 0)
@@ -85,25 +82,21 @@ class ViewController: UITableViewController {
                         
                         return
                     } else {
-                        errorTitle = "Word not recognized"
-                        errorMessage = "You can't just make them up, you know!"
+                        showErrorMessage(title: "Same as the original word",
+                                         msg: "You have to come up with new words!")
                     }
                 } else {
-                    errorTitle = "Same as the original word"
-                    errorMessage = "You have to come up with new words!"
+                    showErrorMessage(title: "Word not recognized",
+                                     msg: "You can't just make them up, you know!")
                 }
             } else {
-                errorTitle = "Word already used"
-                errorMessage = "be more original!"
+                showErrorMessage(title: "Word already used",
+                                 msg: "Be more original!")
             }
         } else {
-            errorTitle = "Word not possible"
-            errorMessage = "You can't spell that word from \(title!.lowercased())."
+            showErrorMessage(title: "Word not possible",
+                             msg: "You can't spell that word from \(title!.lowercased()).")
         }
-        
-        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
     }
     
     func isPossible(word: String) -> Bool {
@@ -149,6 +142,13 @@ class ViewController: UITableViewController {
         }
         
         return true
+    }
+    
+    func showErrorMessage(title errorTitle: String, msg errorMessage: String) {
+        
+        let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 
 }
