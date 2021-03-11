@@ -1,6 +1,6 @@
 # UIKit Notes from 100 Days of Swift
 
-#### Project 1:
+#### Project 1: Storm Viewer
 
 - Auto Layout constraints must always be complete and non-conflicting.
 - Custom table view cells don’t have to have a text label.
@@ -19,7 +19,7 @@
 - Interface Builder’s document outline shows all view controllers in a storyboard.
 - Navigation controllers manage a stack of view controllers that can be pushed by us. The stack gives us the sliding animation.
 
-#### Project 2:
+#### Project 2: Guess the Flag
 
 - iOS has a feature called wide color, which enables extremely deep colors on modern devices (RGB values higher than 1.0)
 - Multiple buttons can call the same method.
@@ -36,7 +36,7 @@
 - 2 or 3 pixels is equal to 1 point depending on the device.
 - Alpha represents transparency.
 
-#### Project 3:
+#### Project 3: Social Media
 
 - We show view controllers by calling the method present().
 - Activity view controllers are capable of handling a variety of data types.
@@ -51,7 +51,7 @@
 - @IBAction automatically implies @objc: Because @IBAction means you're connecting storyboards (Objective-C code) to Swift code, it always implies @objc as well.
 - You don’t have to provide any custom application activities for alert view controllers.
 
-#### Project 4:
+#### Project 4: Easy Browser
 
 - loadView() is called first, and it's where you create your view; viewDidLoad() is called second, and it's where you configure the view that was loaded.
 - Calling sizeToFit() on a view makes it take up the correct amount of space for its content.
@@ -62,7 +62,7 @@
 - The actions in an alert controller can have nil as handler.
 - You can have many flexible spaces in a toolbar.
 
-#### Project 5:
+#### Project 5: Word Scramble
 
 - Checking for isEmpty is faster than count == 0 because it can return false as soon as one item exists.
 - Weak references must be unwrapped before use; unowned references can be used directly.
@@ -77,4 +77,21 @@
 - Inserting a single row into a table view is more efficient than calling reloadData(), and also animatable.
 - The .automatic value for the "with" parameter (eg. in insertRows() method) chooses whichever animation makes sense for the change being made.
 - If firstIndex(of:) doesn’t find the element being asked, it returns nil.
+
+
+#### Project 6: Auto Layout
+
+- Auto Layout lets us position one view relative to another.
+- The right-left position of leading and trailing anchors depends on the language being used (eg. Arabic is read right to left).
+- Visual Formatting Language metrics let us share sizes across views easily.
+- You should find one set of constraints that looks good across all iOS devices of different size.
+- Interface Builder warns us if we try to create invalid or incomplete constraints.
+- Visual Formatting Language creates horizontal constraints using H: and vertical ones using V:.
+- The safe area layout guide automatically excludes rounded edges and any notch.
+- Auto Layout constraints get re-evaluated only when you ask for it to happen or make a significant UI change.
+- We can create Auto Layout anchors using constant values.
+- Aspect Ratio constraints ensure the width and height of a view scale evenly.
+- A pipe symbol in Visual Formatting Language means the edge of the parent view.
+- Using an Auto Layout priority of 1000 makes it required.
+- We can force our app to run only in specific orientations.
 
