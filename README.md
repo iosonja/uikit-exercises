@@ -1,6 +1,7 @@
 # 100 Days of Swift
 
 ### The repository contains my solutions to Paul Hudson's 100 Days of Swift challenge. The challenge is to make small iOS apps built using UIKit.
+#### Homepage: https://www.hackingwithswift.com/100
 
 The "Tutorial-based Exercises" folder contains apps that are built on top of tutorials and only slightly modified by me. The "Built From Scratch" folder only contains projects that are made by me from start to finish.
 
@@ -73,4 +74,12 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
    - `NSRange`
    - IndexPath
    - and more
+
+#### Project 6a and 6b: Auto Layout
+
+- Playing with simple UI elements and their layout in different orientations.
+- More on Auto Layout here: https://www.hackingwithswift.com/articles/140/the-auto-layout-cheat-sheet
+- Topics covered:
+    - Auto Layout
+    - Visual Formatting Language
 
