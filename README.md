@@ -36,7 +36,7 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
    - actions
    - `UIAlertController`
 
-#### Project 3:
+#### Project 3: Shareable version of Storm Viewer (tutorial-based)
 
 - A version of Storm Viewer that allows images to be shared.
 - Topics covered:
@@ -48,12 +48,6 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
 #### Challenge 1: Flag Listing (built from scratch, unfinished)
 
 - An app that lists various world flags in a table view and opens the fags in a detail view.
-- Tasks:
-   - [x] Start with a Single View App template, then change its main `ViewController`class so that builds on `UITableViewController` instead.
-   - [x] Load the list of available flags from the app bundle. You can type them directly into the code if you want, but it’s preferable not to.
-   - [ ] Create a new Cocoa Touch Class responsible for the detail view controller, and give it properties for its image view and the image to load.
-   - [ ] You’ll also need to adjust your storyboard to include the detail view controller, including using Auto Layout to pin its image view correctly.
-   - [ ] You will need to use `UIActivityViewController` to share your flag.
 
 #### Project 4: Simple web browser (tutorial-based)
 
@@ -67,7 +61,7 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
    - `UIProgressView`
    - KVO
 
-#### Project 5: Word Scramble
+#### Project 5: Word Scramble (tutorial-based)
 
 - A word game that deals with anagrams.
 - Topics covered:
@@ -75,7 +69,7 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
    - IndexPath
    - and more
 
-#### Project 6a and 6b: Auto Layout
+#### Project 6a and 6b: Auto Layout (tutorial-based)
 
 - Playing with simple UI elements and their layout in different orientations.
 - More on Auto Layout here: https://www.hackingwithswift.com/articles/140/the-auto-layout-cheat-sheet
