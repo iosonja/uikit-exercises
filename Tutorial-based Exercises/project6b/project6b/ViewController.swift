@@ -13,6 +13,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         let label1 = UILabel()
+        // The following feature was a good idea only when iPhones were less varying in size than
+        // nowadays, in the 2020's it should be set to false:
         label1.translatesAutoresizingMaskIntoConstraints = false
         label1.backgroundColor = UIColor.red
         label1.text = "THESE"
@@ -51,20 +53,23 @@ class ViewController: UIViewController {
         let viewsDictionary = ["label1": label1, "label2": label2, "label3": label3,
                                "label4": label4, "label5": label5]
 
+        // This makes the subviews stretch from the right to the left edge of the view controller:
         for label in viewsDictionary.keys {
             view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[\(label)]|",
                                                                options: [],
                                                                metrics: nil,
                                                                views: viewsDictionary))
+            // H stands for Horizontal
         }
         
         let metrics = ["labelHeight": 88]
 
-        // The @999 is a priority, everything under 1000 is non-mandatory (needed for landscape)
+        // Vertical (V) layout:
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(labelHeight@999)]-[label2(label1)]-[label3(label1)]-[label4(label1)]-[label5(label1)]->=10-|",
                                                            options: [],
                                                            metrics: metrics,
                                                            views: viewsDictionary))
+        // The @999 is a priority, everything under 1000 is non-mandatory (needed for landscape)
         
 //        Alternative way:
         
