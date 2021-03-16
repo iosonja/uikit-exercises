@@ -77,3 +77,6 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
     - Auto Layout
     - Visual Formatting Language
 
+#### Challenge 2: Shopping List (built from scratch)
+
+- An app that takes user input and lists items in a table view.
