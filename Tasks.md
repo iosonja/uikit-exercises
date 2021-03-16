@@ -43,6 +43,6 @@
 - [ ] Try making the height of your labels equal to 1/5th of the main view, minus 10 for the spacing. Hints here: https://www.hackingwithswift.com/read/6/6/wrap-up
 
 #### Challenge 2: Shopping List
-- [ ] Create a table view that displays a list of text items
-- [ ] Allow the user to add elements through a text field
-- [ ] Add a left bar button item that clears the shopping list
+- [x] Create a table view that displays a list of text items
+- [x] Allow the user to add elements through a text field
+- [x] Add a left bar button item that clears the shopping list
