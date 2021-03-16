@@ -57,7 +57,7 @@ class ViewController: UITableViewController {
         let ac = UIAlertController(title: "Enter answer",
                                    message: nil,
                                    preferredStyle: .alert)
-        ac.addTextField() // This is wehere user puts their answers
+        ac.addTextField() // This is where user puts their answers
         
         let submitAction = UIAlertAction(title: "Submit", style: .default) {
             // Avoid strong reference cycle, very important for performance:
