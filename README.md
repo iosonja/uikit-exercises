@@ -15,13 +15,13 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
 - Topics covered:
    - table views and image views
    - app bundles
-   - `FIleManager`
+   - FIleManager
    - typecasting
    - view controllers
    - storyboards
    - outlets
    - Auto Layout
-   - `UIImage`
+   - UIImage
 
 #### Project 2: Guess the Flag (tutorial-based)
 
@@ -29,19 +29,19 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
 - Topics covered:
    - @2x and @3x images
    - asset catalogs
-   - `UIButton`
-   - `CALayer`
-   - `UIColor`
+   - UIButton
+   - CALayer
+   - UIColor
    - random numbers
    - actions
-   - `UIAlertController`
+   - UIAlertController
 
 #### Project 3: Shareable version of Storm Viewer (tutorial-based)
 
 - A version of Storm Viewer that allows images to be shared.
 - Topics covered:
-   - `UIBarButtonItem`
-   - `UIActivityViewController`
+   - UIBarButtonItem
+   - UIActivityViewController
    - \#selector
    - Asking for permissions & Info.plist
 
@@ -53,21 +53,20 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
 
 - A web browser built using WebKit. Allows visiting only certain web sites.
 - Topics covered:
-   - `loadView()`
-   - `WKWebView`
+   - loadView()
+   - WKWebView
    - delegation
-   - `URL`  & `URLRequest`
-   - `UIToolbar`
-   - `UIProgressView`
+   - URL & URLRequest
+   - UIToolbar
+   - UIProgressView
    - KVO
 
 #### Project 5: Word Scramble (tutorial-based)
 
 - A word game that deals with anagrams.
 - Topics covered:
-   - `NSRange`
+   - NSRange
    - IndexPath
-   - and more
 
 #### Project 6a and 6b: Auto Layout (tutorial-based)
 
@@ -80,3 +79,11 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
 #### Challenge 2: Shopping List (built from scratch)
 
 - An app that takes user input and lists items in a table view.
+
+#### Project 7: Whitehouse Petitions (tutorial-based)
+
+- An app that fetches a listing of recent petitions from the White House's API.
+- Topics covered:
+   - UITabBarController
+   - JSON
+   - Codable
