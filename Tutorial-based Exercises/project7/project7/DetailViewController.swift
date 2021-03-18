@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
         webView = WKWebView()
         view = webView
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +25,7 @@ class DetailViewController: UIViewController {
         let html = """
         <html>
             <head>
-                <meta name="viewport" content="width=device-width, initial-scale=1>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
                 <style> body { font-size: 150%; } </style>
             </head>
             <body>
