@@ -87,3 +87,12 @@ The "Tutorial-based Exercises" folder contains apps that are built on top of tut
    - UITabBarController
    - JSON
    - Codable
+
+#### Project 8: 7 Swifty Words (tutorial-based)
+
+- A word game based on the indie game 7 Little Words
+- Topics covered:
+   - addTarget()
+   - enumerated()
+   - joined()
+   - replacingOccurrences()
