@@ -5,6 +5,9 @@
 
 The "Tutorial-based Exercises" folder contains apps that are built on top of tutorials and only slightly modified by me. The "Built From Scratch" folder only contains projects that are made by me from start to finish.
 
+| Tutorial Projects | Independent Projects |
+|-------------------|----------------------|
+| 8/30              | 2/10                 |
 ---
 
 ### Summary of apps I've built so far
