@@ -2,12 +2,24 @@
 
 ### The repository contains my solutions to Paul Hudson's 100 Days of Swift challenge. The challenge is to make small iOS apps built using UIKit.
 #### Homepage: https://www.hackingwithswift.com/100
+---
+## Progress tracking
+
+#### Built from Scratch
+| Own Project | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
+|-------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| Parts Done  | 1/2 | 2/2 | 0/2 | 0/2 | 0/2 | 0/2 | 0/2 | 0/2 | 0/2 |
+
+#### Tutorial-based Exercises
+
+| Tutorial Project | 0     | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 20  | 21   | 22  | 23  | 24  | 25  | 26  | 27  | 28  | 29  | 30  |
+|------------------|-------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|------|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| Days Completed   | 15/15 | 3/3 | 3/3 | 1/1 | 3/3 | 3/3 | 2/2 | 3/3 | 2/3 | 0/2 | 0/3 | 0/3 | 0/2 | 0/3 | 0/2 | 0/2 | 0/2 | 0/2 | 0/2 | 0/3 | 0/2 | 0/21 | 0/2 | 0/3 | 0/2 | 0/2 | 0/3 | 0/2 | 0/2 | 0/3 | 0/2 |
+
+---
 
 The "Tutorial-based Exercises" folder contains apps that are built on top of tutorials and only slightly modified by me. The "Built From Scratch" folder only contains projects that are made by me from start to finish.
 
-| Tutorial Projects | Independent Projects |
-|-------------------|----------------------|
-| 8/30              | 2/10                 |
 ---
 
 ### Summary of apps I've built so far
