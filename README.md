@@ -3,6 +3,9 @@
 ### The repository contains my solutions to Paul Hudson's 100 Days of Swift challenge. The challenge is to make small iOS apps built using UIKit.
 #### Homepage: https://www.hackingwithswift.com/100
 ---
+***Course currently on hiatus***
+
+---
 ## Progress tracking
 
 #### Built from Scratch
